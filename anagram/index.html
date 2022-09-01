@@ -1,0 +1,20 @@
+<script>
+    var arr_kata = ['kita', 'atik', 'tika', 'aku', 'kia', 'makan', 'kua'] 
+    let hasil = {}
+
+    for (let kata of arr_kata) {
+        let data = kata.split("").sort().join("");
+        if (data in hasil) {
+            hasil[data].push(kata);
+        } else {
+            hasil[data] = [kata];
+        }
+    }
+    const keys = Object.keys(hasil);
+    const values = keys.map(function(v) {return hasil[v];});
+
+    let cutOut = values.splice(2, 1) [0];
+    values.splice(3, 0, cutOut); 
+    console.log(values);
+
+</script>
